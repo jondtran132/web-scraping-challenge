@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mission to Mars</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		h4 {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body class="p-3">
+
+	<div class="container-fluid bg-light rounded py-5">
+		<div class="text-center">
+			<h1>Mission to Mars</h1>
+			<a class="btn btn-primary text-center" href="/scrape" role="button">Scrape New Data</a>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h4>Latest Mars News</h4>
+				<h5>{{info.news_title}}</h5>
+				<p>{{info.news_p}}</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-8">
+				<h4>Featured Mars Image</h4>
+				<img src={{info.image_url}}>
+			</div>
+
+			<div class="col-4">
+				<h4>Mars Data</h4>
+				{{info.html_table|safe}}
+			</div>
+		</div>
+
+		<div class="row pt-3">
+			<div class="col-12 text-center">
+				<h4>Mars Hemispheres</h4>
+				<hr>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<div class="card">
+					<img class="card-image-top" src={{info.hemispheres[0].img_url}}>
+					<div class="card-body">
+						<h5 class="card-title">{{info.hemispheres[0].title}}</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-3">
+				<div class="card">
+					<img class="card-image-top" src={{info.hemispheres[1].img_url}}>
+					<div class="card-body">
+						<h5 class="card-title">{{info.hemispheres[1].title}}</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-3">
+				<div class="card">
+					<img class="card-image-top"src={{info.hemispheres[2].img_url}}>
+					<div class="card-body">
+						<h5 class="card-title">{{info.hemispheres[2].title}}</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-3">
+				<div class="card">
+					<img class="card-image-top" src={{info.hemispheres[3].img_url}}>
+					<div class="card-body">
+						<h5 class="card-title">{{info.hemispheres[3].title}}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
